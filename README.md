@@ -2,13 +2,13 @@
 
 ## 📌 Project Overview
 
-Brain Tumor Detection is a deep learning-based image classification project designed to detect brain tumors from MRI (Magnetic Resonance Imaging) scans.
+Brain Tumor Detection is a deep learning-based image classification project designed to detect and classify brain tumors from MRI (Magnetic Resonance Imaging) scans.
 
-The project uses a **Convolutional Neural Network (CNN)** to analyze MRI images and identify patterns associated with brain tumors.
+The project uses a **Convolutional Neural Network (CNN)** to analyze MRI images and classify them into four categories: Glioma, Meningioma, Pituitary Tumor, and No Tumor.
 
-An interactive web application is developed using **Python and Streamlit**, allowing users to upload MRI images and obtain predictions through a user-friendly interface.
+A web-based application is developed using **Flask**, allowing users to upload MRI images and obtain predictions along with confidence scores through an interactive interface.
 
-The developed model achieved approximately **95% accuracy** during evaluation.
+The trained model achieved approximately **95% accuracy** during evaluation.
 
 ---
 
@@ -18,8 +18,9 @@ The developed model achieved approximately **95% accuracy** during evaluation.
 * Apply image preprocessing techniques to prepare MRI scans for classification.
 * Implement a CNN-based image classification approach.
 * Train and evaluate the deep learning model.
-* Develop an interactive web application for MRI image uploads.
+* Develop a user-friendly web application using Flask.
 * Generate predictions based on uploaded MRI images.
+* Classify MRI images into four different categories.
 
 ---
 
@@ -32,7 +33,9 @@ The developed model achieved approximately **95% accuracy** during evaluation.
 | Keras      | CNN model development and training |
 | OpenCV     | Image processing                   |
 | NumPy      | Numerical computations             |
-| Streamlit  | Interactive web application        |
+| Flask      | Web application development        |
+| HTML       | Frontend structure                 |
+| CSS        | Frontend styling                   |
 | VS Code    | Development environment            |
 
 ---
@@ -41,34 +44,74 @@ The developed model achieved approximately **95% accuracy** during evaluation.
 
 The project uses a **Convolutional Neural Network (CNN)** for processing and analyzing brain MRI images.
 
-### Workflow
+### Classification Categories
+
+The trained model identifies the following four categories:
+
+| Category        | Description                                                                  |
+| --------------- | ---------------------------------------------------------------------------- |
+| Glioma          | A type of tumor that originates in glial cells of the brain.                 |
+| Meningioma      | A tumor that develops in the meninges surrounding the brain and spinal cord. |
+| Pituitary Tumor | A tumor that develops in the pituitary gland.                                |
+| No Tumor        | MRI images classified as not showing a tumor by the model.                   |
+
+### Model Development Workflow
 
 1. **Dataset Collection:** Collected brain MRI images for model development.
-2. **Image Preprocessing:** Prepared MRI images by resizing and processing them.
-3. **Model Development:** Developed a CNN model using TensorFlow and Keras.
+2. **Image Preprocessing:** Resized and processed MRI images for model input.
+3. **Model Development:** Developed a CNN architecture using TensorFlow and Keras.
 4. **Model Training:** Trained the model using the prepared MRI image dataset.
-5. **Model Evaluation:** Evaluated the trained model to measure its performance.
-6. **Prediction:** Used the trained model to classify uploaded MRI images.
+5. **Model Evaluation:** Evaluated the trained model using appropriate performance metrics.
+6. **Model Saving:** Saved the trained model in `.h5` format.
+7. **Prediction:** Used the trained model to classify uploaded MRI images.
 
 ### Model Performance
 
-| Metric                  | Result                       |
-| ----------------------- | ---------------------------- |
-| Model Architecture      | Convolutional Neural Network |
-| Accuracy                | Approximately 95%            |
-| Deep Learning Framework | TensorFlow                   |
-| Model API               | Keras                        |
-| Application Framework   | Streamlit                    |
+| Metric                  | Result                             |
+| ----------------------- | ---------------------------------- |
+| Model Architecture      | Convolutional Neural Network (CNN) |
+| Accuracy                | Approximately 95%                  |
+| Deep Learning Framework | TensorFlow                         |
+| Model API               | Keras                              |
+| Model Format            | H5                                 |
 
 ---
 
 ## ⚙️ Application Features
 
-* Upload brain MRI images.
-* Process uploaded images for prediction.
-* Analyze MRI images using the trained CNN model.
-* Display prediction results through an interactive interface.
-* Simple and user-friendly application.
+* Upload brain MRI images through a web interface.
+* Process uploaded MRI images for prediction.
+* Classify MRI images into four categories.
+* Display the predicted tumor category.
+* Display the model's prediction confidence score.
+* Preview the uploaded MRI image.
+* Simple and user-friendly interface.
+
+---
+
+## 📸 Application Output Screenshots
+
+The application provides predictions for four different MRI image categories. The following screenshots demonstrate the model's classification results and confidence scores.
+
+### 1. Meningioma Tumor Detection
+
+<img width="1188" height="895" alt="Screenshot 2026-11-01 114328" src="https://github.com/user-attachments/assets/4778ea66-cc6e-4ed4-bdbd-b25b1f7afecb" />
+
+
+### 2. No Tumor Detection
+
+<img width="1920" height="1022" alt="Screenshot 2026-11-01 114436" src="https://github.com/user-attachments/assets/fe3387ab-d7e8-4048-8c60-dd457f3dbd0b" />
+
+
+### 3. Pituitary Tumor Detection
+
+<img width="1920" height="1022" alt="Screenshot 2026-11-01 114632" src="https://github.com/user-attachments/assets/4cbac5f4-77ca-4430-aa20-34afd705fc16" />
+
+
+### 4. Glioma Tumor Detection
+
+<img width="1920" height="1022" alt="Screenshot 2026-11-01 114718" src="https://github.com/user-attachments/assets/7dbc8740-2b51-4d5d-8336-f130c76fa099" />
+
 
 ---
 
@@ -78,7 +121,8 @@ The project uses a **Convolutional Neural Network (CNN)** for processing and ana
 brain_tumor_detection/
 │
 ├── models/
-│   └── Brain_Tumor.ipynb
+│   ├── Brain_Tumor.ipynb
+│   
 │
 ├── sample_MRI_Images/
 │   ├── Te-gl_0015.jpg
@@ -88,6 +132,14 @@ brain_tumor_detection/
 │
 ├── templates/
 │   └── index.html
+│
+├── output_screenshots/
+│   ├── meningioma.png
+│   ├── no_tumor.png
+│   ├── pituitary.png
+│   └── glioma.png
+│
+├── uploads/
 │
 ├── .gitignore
 │
@@ -99,6 +151,8 @@ brain_tumor_detection/
 ---
 
 ## 🚀 Installation and Execution
+
+Follow these steps to run the project locally.
 
 ### 1. Clone the Repository
 
@@ -115,22 +169,24 @@ cd brain_tumor_detection
 ### 3. Install Required Dependencies
 
 ```bash
-pip install tensorflow streamlit opencv-python numpy pillow
+pip install tensorflow keras flask opencv-python numpy pillow
 ```
 
-### 4. Run the Application
+### 4. Run the Flask Application
 
 ```bash
-streamlit run main.py
+python main.py
 ```
 
 ### 5. Access the Application
 
-Open the application in your browser using:
+Open your web browser and navigate to:
 
 ```text
-http://localhost:8501
+http://127.0.0.1:5000/
 ```
+
+Upload a brain MRI image and click the **Upload and Detect** button to view the prediction result.
 
 ---
 
@@ -139,17 +195,16 @@ http://localhost:8501
 * Improve model performance using advanced CNN architectures.
 * Explore transfer learning techniques.
 * Incorporate additional evaluation metrics such as precision, recall, and F1-score.
-* Improve the application interface and prediction visualization.
+* Enhance the user interface and prediction visualization.
 * Deploy the application for wider accessibility.
 
 ---
-
 
 ## 📌 Conclusion
 
 The Brain Tumor Detection project demonstrates the application of deep learning and computer vision techniques in medical image analysis.
 
-By combining CNN-based image classification, TensorFlow, Keras, OpenCV, and Streamlit, this project provides an interactive approach to analyzing brain MRI images.
+By combining CNN-based image classification, TensorFlow, Keras, OpenCV, and Flask, this project provides an interactive approach to analyzing brain MRI images and classifying them into four categories.
 
 This project strengthened practical knowledge of **Deep Learning, CNN, Image Processing, Model Training, and Web Application Development**.
 
@@ -159,6 +214,6 @@ This project strengthened practical knowledge of **Deep Learning, CNN, Image Pro
 
 **Development Environment:** Visual Studio Code
 
-**Technologies:** Python, TensorFlow, Keras, OpenCV, Streamlit
+**Technologies:** Python, TensorFlow, Keras, OpenCV, Flask, HTML, CSS
 
 **Author:** Tijiya Bhanu
