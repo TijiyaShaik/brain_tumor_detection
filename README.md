@@ -62,8 +62,7 @@ The trained model identifies the following four categories:
 3. **Model Development:** Developed a CNN architecture using TensorFlow and Keras.
 4. **Model Training:** Trained the model using the prepared MRI image dataset.
 5. **Model Evaluation:** Evaluated the trained model using appropriate performance metrics.
-6. **Model Saving:** Saved the trained model in `.h5` format.
-7. **Prediction:** Used the trained model to classify uploaded MRI images.
+6. **Prediction:** Used the trained model to classify uploaded MRI images.
 
 ### Model Performance
 
@@ -73,7 +72,6 @@ The trained model identifies the following four categories:
 | Accuracy                | Approximately 95%                  |
 | Deep Learning Framework | TensorFlow                         |
 | Model API               | Keras                              |
-| Model Format            | H5                                 |
 
 ---
 
@@ -95,23 +93,19 @@ The application provides predictions for four different MRI image categories. Th
 
 ### 1. Meningioma Tumor Detection
 
-<img width="1188" height="895" alt="Screenshot 2026-11-01 114328" src="https://github.com/user-attachments/assets/4778ea66-cc6e-4ed4-bdbd-b25b1f7afecb" />
-
+<img width="1188" height="895" alt="Meningioma Detection" src="https://github.com/user-attachments/assets/4778ea66-cc6e-4ed4-bdbd-b25b1f7afecb" />
 
 ### 2. No Tumor Detection
 
-<img width="1920" height="1022" alt="Screenshot 2026-11-01 114436" src="https://github.com/user-attachments/assets/fe3387ab-d7e8-4048-8c60-dd457f3dbd0b" />
-
+<img width="1920" height="1022" alt="No Tumor Detection" src="https://github.com/user-attachments/assets/fe3387ab-d7e8-4048-8c60-dd457f3dbd0b" />
 
 ### 3. Pituitary Tumor Detection
 
-<img width="1920" height="1022" alt="Screenshot 2026-11-01 114632" src="https://github.com/user-attachments/assets/4cbac5f4-77ca-4430-aa20-34afd705fc16" />
-
+<img width="1920" height="1022" alt="Pituitary Tumor Detection" src="https://github.com/user-attachments/assets/4cbac5f4-77ca-4430-aa20-34afd705fc16" />
 
 ### 4. Glioma Tumor Detection
 
-<img width="1920" height="1022" alt="Screenshot 2026-11-01 114718" src="https://github.com/user-attachments/assets/7dbc8740-2b51-4d5d-8336-f130c76fa099" />
-
+<img width="1920" height="1022" alt="Glioma Detection" src="https://github.com/user-attachments/assets/7dbc8740-2b51-4d5d-8336-f130c76fa099" />
 
 ---
 
@@ -121,8 +115,7 @@ The application provides predictions for four different MRI image categories. Th
 brain_tumor_detection/
 │
 ├── models/
-│   ├── Brain_Tumor.ipynb
-│   
+│   └── Brain_Tumor.ipynb
 │
 ├── sample_MRI_Images/
 │   ├── Te-gl_0015.jpg
@@ -132,14 +125,6 @@ brain_tumor_detection/
 │
 ├── templates/
 │   └── index.html
-│
-├── output_screenshots/
-│   ├── meningioma.png
-│   ├── no_tumor.png
-│   ├── pituitary.png
-│   └── glioma.png
-│
-├── uploads/
 │
 ├── .gitignore
 │
@@ -172,13 +157,19 @@ cd brain_tumor_detection
 pip install tensorflow keras flask opencv-python numpy pillow
 ```
 
-### 4. Run the Flask Application
+### 4. Ensure the Trained Model Is Available
+
+The trained model file is not included in this GitHub repository.
+
+To run the application and generate predictions, make sure the trained model is available locally at the path specified in `main.py`.
+
+### 5. Run the Flask Application
 
 ```bash
 python main.py
 ```
 
-### 5. Access the Application
+### 6. Access the Application
 
 Open your web browser and navigate to:
 
@@ -199,6 +190,7 @@ Upload a brain MRI image and click the **Upload and Detect** button to view the 
 * Deploy the application for wider accessibility.
 
 ---
+
 
 ## 📌 Conclusion
 
