@@ -123,6 +123,12 @@ brain_tumor_detection/
 │   ├── Te-noTr_0004.jpg
 │   └── Te-piTr_0003.jpg
 │
+├── Output_screenshots/
+│   ├── meningioma.png
+│   ├── no_tumor.png
+│   ├── pituitary.png
+│   └── glioma.png
+│
 ├── templates/
 │   └── index.html
 │
